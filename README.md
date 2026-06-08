@@ -52,9 +52,13 @@ Below is the live telemetry showing the active intrusion prevention system mitig
 
 To eliminate manual maintenance overhead, all components are wrapped into custom systemd daemon configurations. This design pattern ensures that if the host cloud hardware undergoes an unexpected reboot or a kernel patch upgrade, the security policies and network routes restore autonomously in the exact sequence required. This guarantees high availability, persistent obfuscation, and reliable uptime without requiring administrative manual hookups after a crash.
 
+![ShadowSocks Active Status](assets/shadowsocks_live.png)
+
 ---
 
 ## 6. User Reference & Verification Commands
+
+![NekoBox Successful Connection Verification](assets/nekobox_success.png)
 
 Use the following commands directly on your server terminal to manage, monitor, and verify the infrastructure components.
 
