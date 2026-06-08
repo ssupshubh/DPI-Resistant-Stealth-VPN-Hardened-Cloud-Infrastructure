@@ -60,5 +60,38 @@ Use the following commands directly on your server terminal to manage, monitor, 
 
 ### Deep Packet Analysis
 Run a live packet sniffer on the server to inspect incoming encrypted UDP traffic moving through the obfuscated pipeline:
+
 ```bash
 sudo tcpdump -i any udp port 443 -c 10
+```
+
+### Intrusion Prevention Telemetry
+Check the overall status of Fail2Ban to see the list of operational protection jails:
+
+```bash
+sudo fail2ban-client status
+```
+Inspect the specific SSH jail to view live failed login counters and the blacklist of currently banned attacker IP addresses:
+
+```bash
+sudo fail2ban-client status sshd
+```
+
+### Tunnel Status Verification
+Verify the status of your WireGuard virtual network interface, active peer handshakes, and data transfer bandwidth:
+
+```bash
+sudo wg show
+```
+
+### System Automation & Startup Audits
+Verify that the underlying network engines, proxy daemons, and security layers are correctly programmed to start automatically upon system boot:
+
+```bash
+systemctl is-enabled wg-quick@wg1 shadowsocks-rust fail2ban
+```
+Check the active execution state and runtime logs for the obfuscation daemon:
+
+```bash
+sudo systemctl status shadowsocks-rust
+```
